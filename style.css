@@ -1,0 +1,122 @@
+:root {
+  --bg: #f9f9f9;
+  --surface: #ffffff;
+  --text: #333333;
+  --heading: #222222;
+  --accent: #00bcd4;
+  --accent-hover: #0097a7;
+  --muted: #666666;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+[data-theme="dark"] {
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --text: #e0e0e0;
+  --heading: #ffffff;
+  --accent: #80deea;
+  --accent-hover: #4dd0e1;
+  --muted: #bbbbbb;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* Reset & Base */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+a { text-decoration: none; color: var(--accent); }
+a:hover { color: var(--accent-hover); }
+
+/* Header */
+header {
+  position: fixed;
+  width: 100%;
+  background: var(--surface);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px var(--shadow);
+  z-index: 1000;
+}
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.logo { font-family: 'Playfair Display', serif; font-size: 2rem; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a {
+  font-weight: 600;
+  position: relative;
+  padding: 0.5rem;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.nav-links a:hover::after { transform: scaleX(1); }
+
+.theme-toggle, .hamburger { background: none; border: none; cursor: pointer; }
+.hamburger { display: none; flex-direction: column; gap: 5px; }
+.hamburger span { width: 25px; height: 3px; background: var(--text); transition: transform 0.3s ease; }
+
+/* Hero */
+.hero { display: flex; align-items: center; justify-content: center; height: 100vh;
+  background: linear-gradient(-45deg, var(--accent), var(--accent-hover));
+  background-size: 400% 400%; animation: gradient 15s ease infinite;
+  text-align: center;
+}
+.hero-content h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--heading); }
+.highlight { color: var(--accent-hover); }
+.typewriter { overflow: hidden; border-right: .15em solid var(--text); white-space: nowrap;
+  animation: typing 3s steps(30), blink 0.75s step-end infinite;
+}
+
+/* Sections */
+.section { padding: 6rem 2rem; max-width: 1100px; margin: auto; }
+.section h2 { font-size: 2.5rem; text-align: center; margin-bottom: 2rem; color: var(--heading); }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 3rem; align-items: center; }
+.about-img img { width: 100%; border-radius: 12px; box-shadow: 0 8px 24px var(--shadow); }
+.about-content p { font-size: 1.125rem; color: var(--muted); }
+
+/* Contact */
+.contact-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem; justify-items: center; }
+.contact-card { background: var(--surface); padding: 1rem 1.5rem; border-radius: 12px;
+  display: flex; align-items: center; gap: 0.75rem; font-size: 1.125rem;
+  box-shadow: 0 6px 18px var(--shadow); transition: transform 0.3s;
+}
+.contact-card:hover { transform: translateY(-6px); }
+
+/* Reveal Animations */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Footer */
+footer { text-align: center; padding: 1rem; font-size: 0.9rem; background: var(--surface); box-shadow: 0 -2px 8px var(--shadow); }
+
+/* Keyframes */
+@keyframes gradient { 0% { background-position: 0 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
+@keyframes typing { from { width: 0; } to { width: 100%; } }
+@keyframes blink { 50% { border-color: transparent; } }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links { display: none; position: absolute; top: 70px; right: 0; background: var(--surface); flex-direction: column; width: 200px; padding: 1rem; box-shadow: 0 4px 16px var(--shadow); }
+  .nav-links.show { display: flex; }
+  .hamburger { display: flex; }
+}

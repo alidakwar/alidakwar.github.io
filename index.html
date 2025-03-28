@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ali Dakwar | Portfolio</title>
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">Ali Dakwar</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Toggle Theme">🌓</button>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Hello, I'm <span class="highlight">Ali Dakwar</span></h1>
+        <p class="typewriter">Software Engineer | Senior CS Student</p>
+      </div>
+    </section>
+
+    <section id="about" class="section reveal about">
+      <div class="about-grid">
+        <div class="about-img">
+          <img src="headshot.jpg" alt="Ali Dakwar Headshot">
+        </div>
+        <div class="about-content">
+          <h2>About Me</h2>
+          <p>Hey there! I’m a senior Computer Science student at UT Dallas, set to graduate in May 2025. I’m currently working as a Software Engineer with Comet Solar Racing, building innovative software for our drivetrain systems in a fast-paced, hands-on environment. When I’m not powering cutting-edge team projects, I’m all about crafting clean, scalable code and tackling challenges across machine learning, full-stack development, or any new frontier that sparks my curiosity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section reveal">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Neural Sentiment Analysis - UTD</h3>
+          <p>Comparative FFNN & RNN sentiment analysis on Yelp reviews using PyTorch. Implements bag-of-words & pretrained embeddings with performance evaluation.</p>
+          <a href="https://github.com/alidakwar/neural-sentiment-analysis" target="_blank">View on GitHub</a>
+        </article>
+        <article class="card">
+          <h3>N-Gram Language Model - UTD</h3>
+          <p>Unigram & bigram language model in Python with Laplace/Add-k smoothing, preprocessing pipelines, and perplexity evaluation.</p>
+          <a href="https://github.com/alidakwar/N-Gram-Language-Model" target="_blank">View on GitHub</a>
+        </article>
+        <article class="card">
+          <h3>Final Report Merge Application - Rosen</h3>
+          <p>PDF report manager desktop app using PyQt5 and Python. Merges PDFs into a main report using .dbf metadata with name correction, preview, and missing file detection.</p>
+          <a href="https://github.com/alidakwar/PDF-Report-Merger/tree/main" target="_blank">View on GitHub</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section reveal contact">
+      <h2>Contact</h2>
+      <div class="contact-cards">
+        <div class="contact-card"><span>📧</span><a href="mailto:ali.dakwar@utdallas.edu">ali.dakwar@utdallas.edu</a></div>
+        <div class="contact-card"><span>🔗</span><a href="https://linkedin.com/in/alidakwar" target="_blank">LinkedIn</a></div>
+        <div class="contact-card"><span>💻</span><a href="https://github.com/alidakwar" target="_blank">GitHub</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 Ali Dakwar</footer>
+  <script src="script.js"></script>
+</body>
+</html>
